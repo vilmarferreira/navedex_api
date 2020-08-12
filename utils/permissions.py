@@ -19,7 +19,7 @@ class IsUserPermission(permissions.BasePermission):
 
         if isinstance(obj, Project):
             return (
-                obj.projects.filter(
-                    user=request.user
+                request.user.projects.filter(
+                    id=obj.id
                 ).exists()
             )
