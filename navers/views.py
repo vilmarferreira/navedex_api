@@ -31,3 +31,7 @@ class NaversViewSet(ModelViewSet):
     def retrieve(self, request, *args, **kwargs):
         self.serializer_class = NaversDetailSerializer
         return super().retrieve(request, *args, **kwargs)
+
+    @assign_request_user(user_field="user")
+    def update(self, request, *args, **kwargs):
+        return super().update(request, *args, **kwargs)
