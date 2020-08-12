@@ -35,5 +35,8 @@ docker-compose run web python manage.py test
 Todas as urls e formato de objetos que devem ser enviados para api estão na documentação, utilizada Postman aqui(https://documenter.getpostman.com/view/9411050/T1LMin72?version=latest)
 
 
+###Dificuldades:
+No processo de desenvolvimento tive dificuldade com o testes automatizados, pois não fazem parte do meu dia a dia, consegui resolver lendo a documentação do Django e django-rest-framework
+
 
     
