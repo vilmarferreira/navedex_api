@@ -31,7 +31,7 @@ class RegisterView(JSONWebTokenAPIView):
             payload = jwt_payload_handler(user)
             token = jwt_encode_handler(payload)
             response_data = jwt_response_payload_handler(token, user, request)
-            response = Response(response_data)
+            response = Response(response_data,status.HTTP_201_CREATED)
             transaction.savepoint_commit(sid)
             return response
         transaction.savepoint_rollback(sid)
