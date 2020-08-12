@@ -70,7 +70,7 @@ class CreateProjectTest(TestCase):
         self.payload_invalid_update = {
             'name': random_char(10),
             'navers': [
-                navers[0].id, navers[1].id,
+                100,200,300
             ]
         }
         self.project = Project.objects.create(name=random_char(10),user=user)

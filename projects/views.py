@@ -1,4 +1,5 @@
 from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.viewsets import ModelViewSet
 from projects.models import Project
 from projects.serializers import ProjectListSerializer, ProjectCreateSerializer, ProjectDetailSerializer
@@ -9,7 +10,8 @@ from utils.permissions import IsUserPermission
 class ProjectViewSet(ModelViewSet):
     queryset = Project.objects.all()
     serializer_class = ProjectCreateSerializer
-    filter_backends = [DjangoFilterBackend,IsUserPermission]
+    permission_classes = [IsAuthenticated, IsUserPermission]
+    filter_backends = [DjangoFilterBackend]
     filterset_fields = ['name']
 
 
