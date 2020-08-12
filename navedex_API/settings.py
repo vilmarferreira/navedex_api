@@ -148,6 +148,8 @@ REST_FRAMEWORK = {
     ),
     'DATE_INPUT_FORMATS': ['iso-8601', '%d/%m/%Y','%d-%m-%Y','%Y-%m-%d'],
     'DATE_FORMATS': ['iso-8601', '%d/%m/%Y'],
+    'TEST_REQUEST_DEFAULT_FORMAT': 'json'
+
 }
 ###JWT
 JWT_AUTH = {
